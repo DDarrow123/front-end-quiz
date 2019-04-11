@@ -1,3 +1,48 @@
 .App-welcome {
   text-align: center;
 }
+
+.wrapper {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "article";
+  margin: 2%;
+}
+
+article {
+  padding: 10px;
+  background-color: white;
+  color: white;
+  grid-area: article;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid grey;
+  color: black;
+}
+
+article .search-name {
+  margin-top: 1em;
+  width: 100%;
+  max-width: 250px;
+}
+
+article .price {
+}
+
+.load-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.load-btn button {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  padding: 5px 40px 5px 40px;
+  margin-bottom: 1em;
+  border: 2px solid #d9ceb0;
+}
