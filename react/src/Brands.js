@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import BrandItem from "./BrandItem";
-
-const URL = "http://localhost:3001/browse?start=";
+import BrandDetailCard from "./BrandDetailCard";
 
 class Brands extends Component {
   renderBrands = () => {
     return this.props.newBrands.map(brand => {
-      // console.log(brand);
       return (
-        <BrandItem key={brand.id} brand={brand} newBrands={this.props.brands} />
+        <BrandItem
+          key={brand.id}
+          brand={brand}
+          newBrands={this.props.brands}
+          callbackSingleItem={this.props.fetchSingleItem}
+        />
       );
     });
   };
@@ -17,9 +20,19 @@ class Brands extends Component {
     this.props.fetchAddedBrands();
   };
   render() {
+    console.log(this.props.renderedItem);
     return (
       <div>
-        <div className="wrapper">{this.renderBrands()}</div>
+        <div className="wrapper">
+          {this.props.renderedItem ? (
+            <BrandDetailCard
+              item={this.props.renderedItem}
+              returnToCollection={this.props.returnToCollection}
+            />
+          ) : (
+            this.renderBrands()
+          )}
+        </div>
         <div className="load-btn">
           <button onClick={this.fetchMoreBrands}>LOAD MORE</button>
         </div>

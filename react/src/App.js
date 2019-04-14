@@ -3,10 +3,12 @@ import "./App.css";
 import Brands from "./Brands";
 
 const URL = "http://localhost:3001/browse";
+const itemURL = "http://localhost:3001/item";
 
 class App extends Component {
   state = {
-    brands: []
+    brands: [],
+    renderedItem: null
   };
   componentDidMount() {
     this.fetchBrands();
@@ -40,6 +42,43 @@ class App extends Component {
       });
   };
 
+  fetchSingleItem = id => {
+    console.log(id);
+    // fetch(itemURL + `/${id}`, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "application/json; charset=utf-8"
+    //   }
+    // })
+    //   .then(r => r.json())
+    //   .then(fetchedItem => {
+    //     console.log(fetchedItem);
+    //     this.setState({
+    //       renderedItem: fetchedItem
+    //     });
+    //   });
+    let selectedItem = this.state.brands.find(item => {
+      return item.id == id;
+      // console.log("Item ID is:" + item.id);
+      // console.log("callBack ID is:" + id);
+    });
+    // console.log(this.state.brands);
+    console.log(selectedItem);
+
+    this.setState(
+      {
+        renderedItem: selectedItem
+      },
+      () => console.log(this.state.renderedItem)
+    );
+  };
+
+  returnToCollection = () => {
+    this.setState({
+      renderedItem: null
+    });
+  };
+
   render() {
     return (
       <div>
@@ -48,6 +87,9 @@ class App extends Component {
           <Brands
             newBrands={this.state.brands}
             fetchAddedBrands={this.fetchAddedBrands}
+            fetchSingleItem={this.fetchSingleItem}
+            renderedItem={this.state.renderedItem}
+            returnToCollection={this.returnToCollection}
           />
         ) : null}
       </div>

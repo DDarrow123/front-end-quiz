@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import heart_icon from "./heart_icon.png";
 
-// const totalItems = Math.ceil(total / limit);
-
 class BrandItem extends Component {
   renderPrices = () => {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.brand.price) {
       return this.props.brand.price.amounts["USD"];
     } else {
@@ -13,23 +11,16 @@ class BrandItem extends Component {
     }
   };
 
-  // fetchMoreBrands = () => {
-  //   console.log("hello!");
-  //   // fetch(URL)
-  //   //   .then(res => res.json())
-  //   //   .then(
-  //   //     addOnBrands => {
-  //   //       this.setState({
-  //   //         moreBrands: [...this.props.newBrands, { moreBrands: addOnBrands }]
-  //   //       });
-  //   //     },
-  //   //     () => console.log("hello!")
-  //   //   );
-  // };
+  getItemDetails = () => {
+    console.log("hi", this.props.brand.id);
+    this.props.callbackSingleItem(this.props.brand.id);
+  };
+
   render() {
+    // const { brand } = this.props;
     return (
       <div className="">
-        <article>
+        <article onClick={this.getItemDetails}>
           <div className="search-image">
             <img
               className="search-image"
