@@ -43,7 +43,7 @@ class App extends Component {
   };
 
   fetchSingleItem = id => {
-    console.log(id);
+    //Note: can also fetch by id but I chose to use the array of items I already had fetched
     // fetch(itemURL + `/${id}`, {
     //   method: "GET",
     //   headers: {
@@ -59,12 +59,7 @@ class App extends Component {
     //   });
     let selectedItem = this.state.brands.find(item => {
       return item.id == id;
-      // console.log("Item ID is:" + item.id);
-      // console.log("callBack ID is:" + id);
     });
-    // console.log(this.state.brands);
-    console.log(selectedItem);
-
     this.setState(
       {
         renderedItem: selectedItem
@@ -82,7 +77,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 className="App-welcome">Browse page</h1>
         {this.state.brands.length !== 0 ? (
           <Brands
             newBrands={this.state.brands}

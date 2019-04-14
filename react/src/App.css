@@ -29,8 +29,6 @@ article {
 
 article .item-container {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 article .item-container .heart-img {
@@ -65,4 +63,117 @@ article .item-container .price {
   padding: 10px 45px 10px 45px;
   margin-bottom: 1em;
   border: 2px solid #d9ceb0;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+}
+
+.home-container .home-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 2%;
+}
+.home-container .home-title {
+  color: #d9ceb0;
+  font-weight: 400;
+}
+
+.home-container .company-name {
+  margin-left: 35%;
+  text-align: center;
+  font-size: 2.5vw;
+}
+
+.item-full-page-detail {
+  display: grid;
+  grid-gap: 20px 10px;
+  grid-template-columns: 375px 1fr;
+  grid-template-rows: auto;
+  width: 97%;
+}
+
+.item-img {
+  margin-left: 4%;
+  grid-column: 1/2;
+  grid-row: 2/4;
+  box-shadow: 2px 2px 5px #e8e8e8;
+  border-radius: 3px;
+}
+
+.item-img .heart-btn {
+  margin-left: 85%;
+  margin-top: 5%;
+  width: 25px;
+}
+
+.item-img img {
+  margin-left: 10%;
+}
+
+.item-page-details {
+  grid-column: 2/4;
+  grid-row: 2/3;
+  box-shadow: 2px 2px 5px #e8e8e8;
+  border-radius: 3px;
+}
+
+.item-page-details h2 {
+  font-weight: 500;
+  margin-left: 2%;
+}
+
+.item-page-details h3 {
+  font-weight: 500;
+  margin-left: 2%;
+}
+
+.item-page-details h4 {
+  font-weight: 500;
+  margin-left: 2%;
+}
+
+.item-page-details h4 span {
+  font-weight: 600;
+}
+
+.item-page-details .action-btn {
+  color: #d9ceb0;
+  width: 50%;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 5px #e8e8e8;
+  border: 0.25px solid #f9f9f9;
+  font-size: 1.5vw;
+}
+
+.item-page-details .action-offer-btn {
+  color: #d9ceb0;
+  width: 50%;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 5px #e8e8e8;
+  border: 0.25px solid #f9f9f9;
+  font-size: 1.5vw;
+}
+
+.item-page-description {
+  grid-column: 2/4;
+  grid-row: 3/4;
+  box-shadow: 2px 2px 5px #e8e8e8;
+  border-radius: 3px;
+}
+
+.item-page-description p {
+  margin-left: 2%;
+}
+
+.item-page-description h4 {
+  font-weight: 500;
+  margin-left: 2%;
+}
+
+.item-page-description h4 span {
+  font-weight: 600;
 }

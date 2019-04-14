@@ -20,22 +20,22 @@ class Brands extends Component {
     this.props.fetchAddedBrands();
   };
   render() {
-    console.log(this.props.renderedItem);
     return (
       <div>
-        <div className="wrapper">
-          {this.props.renderedItem ? (
-            <BrandDetailCard
-              item={this.props.renderedItem}
-              returnToCollection={this.props.returnToCollection}
-            />
-          ) : (
-            this.renderBrands()
-          )}
-        </div>
-        <div className="load-btn">
-          <button onClick={this.fetchMoreBrands}>LOAD MORE</button>
-        </div>
+        {this.props.renderedItem ? (
+          <BrandDetailCard
+            item={this.props.renderedItem}
+            returnToCollection={this.props.returnToCollection}
+          />
+        ) : (
+          <div>
+            <h1 className="App-welcome">Browse page</h1>
+            <div className="wrapper">{this.renderBrands()}</div>
+            <div className="load-btn">
+              <button onClick={this.fetchMoreBrands}>LOAD MORE</button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
