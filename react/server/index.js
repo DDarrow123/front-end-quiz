@@ -13,6 +13,7 @@ app.use(function(req, res, next) {
 
 app.use("/browse", require("./routes/browseRouter"));
 app.use("/item", require("./routes/itemRouter"));
+app.use("/like", require("./routes/likeRouter"));
 
 app.listen(port, function() {
   console.log("Example app listening at localhost:%s", port);

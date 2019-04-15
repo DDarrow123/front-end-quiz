@@ -4,6 +4,7 @@ import Brands from "./Brands";
 
 const URL = "http://localhost:3001/browse";
 const itemURL = "http://localhost:3001/item";
+const likeURL = "http://localhost:3001/like";
 
 class App extends Component {
   state = {
