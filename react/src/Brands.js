@@ -21,15 +21,26 @@ class Brands extends Component {
     this.props.fetchAddedBrands();
   };
 
+  renderBrandDetailCard = () => {
+    let brandDetails = this.props.newBrands.find(brand => {
+      return brand.id === this.props.renderedItem.id;
+    });
+    console.log(brandDetails);
+    return (
+      <BrandDetailCard
+        brandDetails={brandDetails}
+        returnToCollection={this.props.returnToCollection}
+        updateFavoritedItem={this.props.updateFavoritedItem}
+      />
+    );
+  };
+
   render() {
+    console.log(this.props.renderedItem);
     return (
       <div>
         {this.props.renderedItem ? (
-          <BrandDetailCard
-            item={this.props.renderedItem}
-            returnToCollection={this.props.returnToCollection}
-            updateFavoritedItem={this.props.updateFavoritedItem}
-          />
+          this.renderBrandDetailCard()
         ) : (
           <div>
             <h1 className="App-welcome">Browse page</h1>

@@ -4,28 +4,28 @@ import filled_heart from "./filled_heart.svg";
 import heart_icon from "./heart_icon.png";
 
 const BrandDetailCard = props => {
+  console.log(props);
   const returnItemToCollection = () => {
     props.returnToCollection();
-    // console.log(props);
   };
 
   const renderSellerCompany = () => {
-    if (props.item.seller) {
-      return props.item.seller.company;
+    if (props.brandDetails.seller) {
+      return props.brandDetails.seller.company;
     }
   };
 
   const renderItemPrice = () => {
-    if (props.item.price) {
-      return props.item.price.amounts["USD"];
+    if (props.brandDetails.price) {
+      return props.brandDetails.price.amounts["USD"];
     } else {
       return "Price Upon Request";
     }
   };
 
   const toggleFavoritedStatus = () => {
-    console.log("hi", props.item.id);
-    props.updateFavoritedItem(props.item.id);
+    // console.log("hi", props.brandDetails.id);
+    props.updateFavoritedItem(props.brandDetails.id);
   };
   return (
     <React.Fragment>
@@ -43,24 +43,25 @@ const BrandDetailCard = props => {
           <img
             className="heart-btn"
             onClick={toggleFavoritedStatus}
-            src={props.item.like ? filled_heart : heart_icon}
+            src={props.brandDetails.like ? filled_heart : heart_icon}
             alt="heart icon"
           />
-          <img src={props.item["image"]} />
+          <img src={props.brandDetails["image"]} />
         </div>
         <div className="item-page-details">
-          <h2>{props.item.title}</h2>
+          <h2>{props.brandDetails.title}</h2>
           <h3>{renderItemPrice()}</h3>
           <h4>
-            <span>Measurements:</span> <br /> {props.item.measurements.display}
+            <span>Measurements:</span> <br />{" "}
+            {props.brandDetails.measurements.display}
           </h4>
           <button className="action-btn">Purchase</button>
           <button className="action-offer-btn">Make Offer</button>
         </div>
         <div className="item-page-description">
-          <p>{props.item.description}</p>
+          <p>{props.brandDetails.description}</p>
           <h4>
-            <span>Creator:</span> {props.item.creators}{" "}
+            <span>Creator:</span> {props.brandDetails.creators}{" "}
           </h4>
         </div>
       </div>

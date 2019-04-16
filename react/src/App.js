@@ -9,9 +9,7 @@ const likeURL = "http://localhost:3001/like";
 class App extends Component {
   state = {
     brands: [],
-    renderedItem: null,
-    favoritedItems: []
-    // like: true
+    renderedItem: null
   };
   componentDidMount() {
     this.fetchBrands();
@@ -31,7 +29,7 @@ class App extends Component {
   };
 
   fetchAddedBrands = () => {
-    console.log(this.state.brands.length);
+    // console.log(this.state.brands.length);
     fetch(URL + `?start=${this.state.brands.length}`)
       .then(res => res.json())
       .then(addOnBrands => {
@@ -62,9 +60,12 @@ class App extends Component {
     let selectedItem = this.state.brands.find(item => {
       return item.id == id;
     });
-    this.setState({
-      renderedItem: selectedItem
-    });
+    this.setState(
+      {
+        renderedItem: selectedItem
+      },
+      () => console.log(this.state.renderedItem.id)
+    );
   };
 
   returnToCollection = () => {

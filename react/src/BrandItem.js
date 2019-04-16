@@ -14,6 +14,7 @@ class BrandItem extends Component {
 
   getItemDetails = () => {
     this.props.callbackSingleItem(this.props.brand.id);
+    console.log(this.props.brand.id);
   };
 
   toggleFavoritedStatus = () => {
@@ -24,9 +25,10 @@ class BrandItem extends Component {
   render() {
     return (
       <div className="">
-        <article onClick={this.getItemDetails}>
+        <article>
           <div className="search-image">
             <img
+              onClick={this.getItemDetails}
               className="search-image"
               src={this.props.brand["image"]}
               alt="fashion look image"
