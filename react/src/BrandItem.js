@@ -12,8 +12,13 @@ class BrandItem extends Component {
   };
 
   getItemDetails = () => {
-    console.log("hi", this.props.brand.id);
+    // console.log("hi", this.props.brand.id);
     this.props.callbackSingleItem(this.props.brand.id);
+  };
+
+  toggleFavoritedStatus = () => {
+    console.log("hi", this.props.brand.id);
+    this.props.updateFavoritedItem(this.props.brand.id);
   };
 
   render() {
@@ -31,7 +36,12 @@ class BrandItem extends Component {
           <div className="item-container">
             <div className="price">{this.renderPrices()}</div>
             <div className="heart-img">
-              <img className="heart-btn" src={heart_icon} alt="heart icon" />
+              <img
+                className="heart-btn"
+                onClick={this.toggleFavoritedStatus}
+                src={heart_icon}
+                alt="heart icon"
+              />
             </div>
           </div>
         </article>

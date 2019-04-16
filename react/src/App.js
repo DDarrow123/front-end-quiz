@@ -9,7 +9,9 @@ const likeURL = "http://localhost:3001/like";
 class App extends Component {
   state = {
     brands: [],
-    renderedItem: null
+    renderedItem: null,
+    favoritedItems: []
+    // like: true
   };
   componentDidMount() {
     this.fetchBrands();
@@ -29,7 +31,6 @@ class App extends Component {
   };
 
   fetchAddedBrands = () => {
-    // const start = this.state.brands.length ? this.state.brands.length - 1 : 0;
     console.log(this.state.brands.length);
     fetch(URL + `?start=${this.state.brands.length}`)
       .then(res => res.json())
@@ -44,7 +45,7 @@ class App extends Component {
   };
 
   fetchSingleItem = id => {
-    //Note: can also fetch by id but I chose to use the array of items I already had fetched
+    //Note: can also fetch by id but I chose to use the array of items I already had fetched to optimize performance
     // fetch(itemURL + `/${id}`, {
     //   method: "GET",
     //   headers: {
@@ -61,18 +62,52 @@ class App extends Component {
     let selectedItem = this.state.brands.find(item => {
       return item.id == id;
     });
-    this.setState(
-      {
-        renderedItem: selectedItem
-      },
-      () => console.log(this.state.renderedItem)
-    );
+    this.setState({
+      renderedItem: selectedItem
+    });
   };
 
   returnToCollection = () => {
     this.setState({
       renderedItem: null
     });
+  };
+
+  updateFavoritedItem = id => {
+    let favoritedItem = this.state.brands.find(item => {
+      return item.id == id;
+    });
+    console.log(favoritedItem.id);
+
+    if (favoritedItem.like === undefined) {
+      favoritedItem.like = false;
+    }
+    fetch(likeURL + `/${favoritedItem.id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify({
+        like: !favoritedItem.like
+      })
+    })
+      .then(res => res.json())
+      .then(res =>
+        this.setState(
+          {
+            brands: [
+              ...this.state.brands.map(brand => {
+                if (brand.id === res.id) {
+                  return res;
+                } else {
+                  return brand;
+                }
+              })
+            ]
+          },
+          () => console.log(this.state.brands)
+        )
+      );
   };
 
   render() {
@@ -85,6 +120,7 @@ class App extends Component {
             fetchSingleItem={this.fetchSingleItem}
             renderedItem={this.state.renderedItem}
             returnToCollection={this.returnToCollection}
+            updateFavoritedItem={this.updateFavoritedItem}
           />
         ) : null}
       </div>

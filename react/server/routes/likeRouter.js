@@ -4,9 +4,9 @@ const express = require("express");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 
+//setting up the correct path to parse
 const path = require("path");
 const adapter = new FileSync(path.resolve(__dirname, "../data/items.json"));
-// console.log(adapter);
 const db = low(adapter);
 
 const likeRouter = express.Router();
@@ -17,17 +17,17 @@ const likeRouter = express.Router();
 //     }) || {};
 // };
 
-const likeItem = function(itemId) {
-  const item = db
+const likeItem = function(itemId, like) {
+  return db
     .find({ id: itemId })
-    .assign({ like: true })
+    .assign({ like: like })
     .write();
-  return item;
 };
 
 likeRouter.post("/:id", (req, res) => {
   const id = req.params.id;
-  const item = likeItem(id);
+  const like = req.body.like;
+  const item = likeItem(id, like);
   res.status(200).json(item);
 });
 

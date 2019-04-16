@@ -11,6 +11,7 @@ class Brands extends Component {
           brand={brand}
           newBrands={this.props.brands}
           callbackSingleItem={this.props.fetchSingleItem}
+          updateFavoritedItem={this.props.updateFavoritedItem}
         />
       );
     });
@@ -19,6 +20,7 @@ class Brands extends Component {
   fetchMoreBrands = () => {
     this.props.fetchAddedBrands();
   };
+
   render() {
     return (
       <div>
