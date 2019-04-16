@@ -78,8 +78,7 @@ class App extends Component {
     let favoritedItem = this.state.brands.find(item => {
       return item.id == id;
     });
-    console.log(favoritedItem.id);
-
+    // console.log(favoritedItem.id);
     if (favoritedItem.like === undefined) {
       favoritedItem.like = false;
     }

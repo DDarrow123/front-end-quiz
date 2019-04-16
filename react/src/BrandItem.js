@@ -14,7 +14,7 @@ class BrandItem extends Component {
 
   getItemDetails = () => {
     this.props.callbackSingleItem(this.props.brand.id);
-    console.log(this.props.brand.id);
+    // console.log(this.props.brand.id);
   };
 
   toggleFavoritedStatus = () => {

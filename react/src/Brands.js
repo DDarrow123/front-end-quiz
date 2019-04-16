@@ -36,7 +36,7 @@ class Brands extends Component {
   };
 
   render() {
-    console.log(this.props.renderedItem);
+    // console.log(this.props.renderedItem);
     return (
       <div>
         {this.props.renderedItem ? (
