@@ -37,7 +37,7 @@
     "attributes": "Vintage 1950s Mexican Mid-Century Modern Coffee and Cocktail Tables",
     "materials": "",
     "description": "Stunning and rare solid brass or bronze, sculptural coffee table, by Arturo Pani, Mexico City, circa 1950.",
-    "like": true
+    "like": false
   },
   {
     "id": "f_3864112",
@@ -77,7 +77,7 @@
     "attributes": "2010s Italian Mid-Century Modern Wall Mirrors",
     "materials": "",
     "description": "Hand-cut, and polished panels of pale green crystal alternating with thin blue glass fins, surrounding a central mirrored panel.  Brass mounts and surrounds.  Signed on outer edge and created exclusively for Donzella.",
-    "like": true
+    "like": false
   },
   {
     "id": "f_3907612",
@@ -503,7 +503,7 @@
     "attributes": "Vintage 1940s Italian Mid-Century Modern Cabinets",
     "materials": "",
     "description": "A successful collaboration between Osvaldo Borsani and Adriano Spilimbergo who together have designed several elegant and precious furniture between the late of 1940s and early 1950s.This is an excellent example for beauty, class and quality. Mahogan",
-    "like": true
+    "like": false
   },
   {
     "id": "f_3922262",
@@ -542,7 +542,8 @@
     "creators": "",
     "attributes": "Antique Late 19th Century Tableware",
     "materials": "",
-    "description": "This exceptional 207-piece antique Tiffany & Co. sterling silver flatware service for 12 is crafted in the highly desirable <em>Chrysanthemum</em> pattern. Introduced in 1878 and patented in 1880, the <em>Chrysanthemum</em> pattern is considered amon"
+    "description": "This exceptional 207-piece antique Tiffany & Co. sterling silver flatware service for 12 is crafted in the highly desirable <em>Chrysanthemum</em> pattern. Introduced in 1878 and patented in 1880, the <em>Chrysanthemum</em> pattern is considered amon",
+    "like": false
   },
   {
     "id": "f_3912352",
@@ -1159,7 +1160,8 @@
     "creators": "Georges Pelletier",
     "attributes": "Vintage 1970s French Mid-Century Modern Table Lamps",
     "materials": "Ceramic",
-    "description": "Georges Pelletier, Lamps,\r\nSoleil model\r\nwhite ceramic,\r\ncirca 1970, France.\r\nCertificate of authenticity.\r\nHeight: 85 cm, diameter: 50 cm, base diameter: 25 cm."
+    "description": "Georges Pelletier, Lamps,\r\nSoleil model\r\nwhite ceramic,\r\ncirca 1970, France.\r\nCertificate of authenticity.\r\nHeight: 85 cm, diameter: 50 cm, base diameter: 25 cm.",
+    "like": true
   },
   {
     "id": "f_3833092",

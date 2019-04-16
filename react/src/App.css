@@ -4,7 +4,6 @@
 
 .wrapper {
   width: auto;
-  /* height: 600px; */
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(3, 1fr);
@@ -29,25 +28,28 @@ article {
 
 article .item-container {
   display: flex;
+  align-items: center;
+  width: 300px;
 }
 
 article .item-container .heart-img {
-  margin-left: 20vw;
+  /* margin-left: 2vw; */
+  /* flex-basis: 20%; */
 }
 
 article .item-container .heart-img .heart-btn {
   width: 20px;
 }
 
+article .item-container .price {
+  flex-basis: 140%;
+  margin-right: 0.5em;
+}
+
 article .search-name {
   margin-top: 1em;
   width: 100%;
   max-width: 250px;
-}
-
-article .item-container .price {
-  /* margin-right: 50%; */
-  /* flex: 0 0 50%; */
 }
 
 .load-btn {
@@ -62,6 +64,10 @@ article .item-container .price {
   padding: 10px 45px 10px 45px;
   margin-bottom: 1em;
   border: 2px solid #d9ceb0;
+}
+
+.load-btn button:focus {
+  outline: 0;
 }
 
 .home-container {
