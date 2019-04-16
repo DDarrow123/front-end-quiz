@@ -51,7 +51,11 @@ Hello!
 
 For this challenge, here are a few additional project notes: 
 
-1. **Viewing the project** To run and view the project, setup remains the same as noted in the above in the 'Server side notes' section 
+1. **Viewing the project** To run and view the project, setup remains the same as noted in the above in the 'Server side notes' section, once you've cloned down the repo to a folder of your choice. First, `cd` into '1stdibs-react-challenge,' then `cd` into 'front-end-quiz,' and lastly `cd` into the 'react' folder. From here, as noted above, the below will get the servers up and running:
+
+- `npm install` - install dependencies
+- `npm run start` - run webpack server
+- `npm run dev` - run Express.js server
 
 2. **Browse page:** Here I used a simple fetch to render all items on the main page by passing down the set state to the 'Brands' component
 
