@@ -11,12 +11,6 @@ const db = low(adapter);
 
 const likeRouter = express.Router();
 
-// const getItem = function (itemId) {
-//     return cachedItems.find(function (item) {
-//         return item.id === itemId || item.integerId === itemId;
-//     }) || {};
-// };
-
 const likeItem = function(itemId, like) {
   return db
     .find({ id: itemId })

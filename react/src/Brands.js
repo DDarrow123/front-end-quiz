@@ -28,6 +28,7 @@ class Brands extends Component {
           <BrandDetailCard
             item={this.props.renderedItem}
             returnToCollection={this.props.returnToCollection}
+            updateFavoritedItem={this.props.updateFavoritedItem}
           />
         ) : (
           <div>

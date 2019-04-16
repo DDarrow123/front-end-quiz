@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import heart_icon from "./heart_icon.png";
+import filled_heart from "./filled_heart.svg";
 
 class BrandItem extends Component {
   renderPrices = () => {
@@ -12,17 +13,15 @@ class BrandItem extends Component {
   };
 
   getItemDetails = () => {
-    // console.log("hi", this.props.brand.id);
     this.props.callbackSingleItem(this.props.brand.id);
   };
 
   toggleFavoritedStatus = () => {
-    console.log("hi", this.props.brand.id);
+    // console.log("hi", this.props.brand.id);
     this.props.updateFavoritedItem(this.props.brand.id);
   };
 
   render() {
-    // const { brand } = this.props;
     return (
       <div className="">
         <article onClick={this.getItemDetails}>
@@ -39,7 +38,7 @@ class BrandItem extends Component {
               <img
                 className="heart-btn"
                 onClick={this.toggleFavoritedStatus}
-                src={heart_icon}
+                src={this.props.brand.like ? filled_heart : heart_icon}
                 alt="heart icon"
               />
             </div>

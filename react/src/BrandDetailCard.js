@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import back_arrow from "./back_arrow.svg";
+import filled_heart from "./filled_heart.svg";
 import heart_icon from "./heart_icon.png";
 
 const BrandDetailCard = props => {
@@ -21,6 +22,11 @@ const BrandDetailCard = props => {
       return "Price Upon Request";
     }
   };
+
+  const toggleFavoritedStatus = () => {
+    console.log("hi", props.item.id);
+    props.updateFavoritedItem(props.item.id);
+  };
   return (
     <React.Fragment>
       <div className="home-container">
@@ -34,7 +40,12 @@ const BrandDetailCard = props => {
       </div>
       <div className="item-full-page-detail">
         <div className="item-img">
-          <img className="heart-btn" src={heart_icon} alt="heart icon" />
+          <img
+            className="heart-btn"
+            onClick={toggleFavoritedStatus}
+            src={props.item.like ? filled_heart : heart_icon}
+            alt="heart icon"
+          />
           <img src={props.item["image"]} />
         </div>
         <div className="item-page-details">
