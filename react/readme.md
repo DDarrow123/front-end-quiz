@@ -43,3 +43,6 @@ Add item favoriting:
 - You can use [ES6 features](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
 - You can change Create React App or Express.js configs/setup as you like
 - You can use any framework for CSS or just write your own styles. Don't need to totally match given examples
+
+
+###My Notes:
