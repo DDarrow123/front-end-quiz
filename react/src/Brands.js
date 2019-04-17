@@ -23,7 +23,7 @@ class Brands extends Component {
 
   renderBrandDetailCard = () => {
     let brandDetails = this.props.newBrands.find(brand => {
-      return brand.id === this.props.renderedItem.id;
+      return brand.id === this.props.showDetailsId;
     });
     console.log(brandDetails);
     return (
@@ -39,7 +39,7 @@ class Brands extends Component {
     // console.log(this.props.renderedItem);
     return (
       <div>
-        {this.props.renderedItem ? (
+        {this.props.showDetailsId ? (
           this.renderBrandDetailCard()
         ) : (
           <div>
